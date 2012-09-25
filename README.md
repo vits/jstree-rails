@@ -1,6 +1,6 @@
 # jsTree-Rails
 
-Makes including jsTree in Rails 3.1 projects a breeze.
+This gem packages the jsTree plugin for easy use with the Rails 3.1+ asset pipleine.
 
 ## Installation
 
@@ -18,6 +18,12 @@ jsTree needs to be included after jQuery in your javascript manifest:
     //= require jquery_ujs
     //= require jstree # add this line to app/assets/javascripts/application.js
     //= require_tree .
+
+To precompile stylesheets in production add to config/environments/production.rb:
+
+    %w(apple classic default default-rtl).each do |theme|
+      config.assets.precompile << "jstree-themes/#{theme}/style.css"
+    end
 
 ### Themes
 
